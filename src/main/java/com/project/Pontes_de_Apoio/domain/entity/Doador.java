@@ -1,8 +1,47 @@
 package com.project.Pontes_de_Apoio.domain.entity;
 
+import java.util.List;
+
+
 public class Doador {
-    private String id;
-    private String name;
-    private String email;
-    private String number;
+    private Long id;
+    private final String nome ;
+    private final String email;
+    private final String telefone;
+
+    private Doador(String nome, String email, String telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    public static Doador create(String nome, String email, String telefone) {
+        if (nome == null || nome.isBlank()) {
+            throw new IllegalArgumentException("Nome é obrigatório");
+        }
+        if (email == null || !email.contains("@")) {
+            throw new IllegalArgumentException("Email inválido");
+        }
+        if (telefone != null && telefone.length() > 20) {
+            throw new IllegalArgumentException("Telefone muito longo");
+        }
+
+        return new Doador(nome, email, telefone);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
 }
