@@ -29,6 +29,20 @@ public class Doador {
         return new Doador(nome, email, telefone);
     }
 
+    public Doador mudarEmail(String novoEmail) {
+        if(novoEmail == null || novoEmail.isBlank() || !novoEmail.contains("@")) {
+            throw new IllegalArgumentException("Novo Email inválido");
+        }
+        return new Doador(this.nome, novoEmail, this.telefone);
+    }
+
+    public Doador mudarTelefone(String novoTelefone) {
+        if(novoTelefone == null || novoTelefone.isBlank()) {
+            throw new IllegalArgumentException("Novo telefone inválido");
+        }
+        return new Doador(this.nome, this.email, novoTelefone);
+    }
+
     public Long getId() {
         return id;
     }
