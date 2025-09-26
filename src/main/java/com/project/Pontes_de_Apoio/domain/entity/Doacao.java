@@ -3,7 +3,7 @@ package com.project.Pontes_de_Apoio.domain.entity;
 import java.time.LocalDateTime;
 
 public class Doacao {
-    private Long ;
+    private Long id;
     private final Doador doador;
     private final double valorDoado;
     private final LocalDateTime data;
