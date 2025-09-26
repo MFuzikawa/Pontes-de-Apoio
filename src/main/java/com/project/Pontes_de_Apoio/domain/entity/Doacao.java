@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Doacao {
     private Long id;
-    private final Doador ;
+    private final Doador doador;
     private final double valorDoado;
     private final LocalDateTime data;
 
