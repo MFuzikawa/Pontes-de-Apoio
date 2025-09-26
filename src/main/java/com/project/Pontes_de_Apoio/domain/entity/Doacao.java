@@ -6,7 +6,7 @@ public class Doacao {
     private Long id;
     private final Doador doador;
     private final double valorDoado;
-    private final LocalDateTime ;
+    private final LocalDateTime data;
 
     private Doacao(Doador doador, double valorDoado, LocalDateTime data) {
         this.doador = doador;
